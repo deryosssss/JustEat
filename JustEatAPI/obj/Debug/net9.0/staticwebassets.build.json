@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "tlAD2tL6ahuLkcKPNBBDTdw0lQxJe6zk1baHWurxiPA=",
+  "Source": "JustEatAPI",
+  "BasePath": "_content/JustEatAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,6 @@
+@JustEatAPI_HostAddress = http://localhost:5020
+
+GET {{JustEatAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
