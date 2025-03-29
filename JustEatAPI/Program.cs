@@ -1,7 +1,10 @@
+using JustEatAPI.Controllers;
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddControllers();  // Add this line to support controllers
 builder.Services.AddOpenApi();
 builder.Services.AddHttpClient();
 
@@ -15,10 +18,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Map the controllers to handle routes
+app.MapControllers(); // This will map your restaurant controller to the API
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}

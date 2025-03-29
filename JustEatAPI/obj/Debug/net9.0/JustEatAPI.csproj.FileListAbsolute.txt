@@ -31,3 +31,5 @@
 /Users/deryabaglan/JustEatProject/JustEatAPI/obj/Debug/net9.0/JustEatAPI.pdb
 /Users/deryabaglan/JustEatProject/JustEatAPI/obj/Debug/net9.0/JustEatAPI.genruntimeconfig.cache
 /Users/deryabaglan/JustEatProject/JustEatAPI/obj/Debug/net9.0/ref/JustEatAPI.dll
+/Users/deryabaglan/JustEatProject/JustEatAPI/obj/Debug/net9.0/JustEatAPI.sourcelink.json
+/Users/deryabaglan/JustEatProject/JustEatAPI/bin/Debug/net9.0/Newtonsoft.Json.dll
