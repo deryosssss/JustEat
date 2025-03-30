@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JustEatAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa4ecbb5d7d6bba46c1b846668bc606f7f16bef5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ba6e3febd8beea0feeeb1ce11f00ae522565e47")]
 [assembly: System.Reflection.AssemblyProductAttribute("JustEatAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JustEatAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
