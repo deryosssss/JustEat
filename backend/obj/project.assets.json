@@ -124,11 +124,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/deryabaglan/JustEatProject/JustEatAPI/JustEatAPI.csproj",
+      "projectUniqueName": "/Users/deryabaglan/Desktop/masters/JustEatProject/JustEatAPI/JustEatAPI.csproj",
       "projectName": "JustEatAPI",
-      "projectPath": "/Users/deryabaglan/JustEatProject/JustEatAPI/JustEatAPI.csproj",
+      "projectPath": "/Users/deryabaglan/Desktop/masters/JustEatProject/JustEatAPI/JustEatAPI.csproj",
       "packagesPath": "/Users/deryabaglan/.nuget/packages/",
-      "outputPath": "/Users/deryabaglan/JustEatProject/JustEatAPI/obj/",
+      "outputPath": "/Users/deryabaglan/Desktop/masters/JustEatProject/JustEatAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/deryabaglan/.nuget/NuGet/NuGet.Config"

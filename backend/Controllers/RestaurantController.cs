@@ -49,7 +49,7 @@ namespace JustEatAPI.Controllers
                     })
                     .ToList();
 
-                if (restaurants == null || !restaurants.Any())
+                 if (restaurants == null || !restaurants.Any())
                 {
                     return NotFound("No restaurants found for the given postcode.");
                 }
