@@ -1,30 +1,34 @@
+// src/components/RestaurantList.js
 import React from "react";
+import "./RestaurantList.css";
 
-const RestaurantList = ({ restaurants, error }) => {
+function RestaurantList({ restaurants }) {
+  if (restaurants.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="restaurant-list">
-      {error && <p className="error">{error}</p>}
-
-      {restaurants.length > 0 ? (
-        <div>
-          <h2>Restaurants Found:</h2>
-          <ul>
-            {restaurants.map((restaurant, index) => (
-              <li key={index} className="restaurant-card">
-                <h3>{restaurant.name}</h3>
-                <p><strong>Cuisines:</strong> {restaurant.cuisines}</p>
-                <p><strong>Rating:</strong> ⭐ {restaurant.rating}</p>
-                <p><strong>Address:</strong> {restaurant.address}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <p>No restaurants found for this postcode.</p>
-      )}
+    <div className="results">
+      <h2> Top 10 Restaurants Near You</h2>
+      <ul>
+        {restaurants.map((r, index) => (
+          <li key={index} className="restaurant-card">
+            <strong>{r.name || "Unknown Restaurant"}</strong>
+            <p>
+              <strong>Cuisines:</strong> {r.cuisines || "N/A"}
+            </p>
+            <p>
+              <strong>Rating:</strong> ⭐ {r.rating ? r.rating.toFixed(1) : "N/A"}
+            </p>
+            <p>
+              <strong>Address:</strong> {r.address || "Address not available"}
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
-};
+}
 
 export default RestaurantList;
 

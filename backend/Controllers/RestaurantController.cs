@@ -20,9 +20,11 @@ namespace JustEatAPI.Controllers
         [HttpGet("get-restaurants")]
         public async Task<IActionResult> GetRestaurants([FromQuery] string postcode)
         {
+            // Check if no postcode is passed (initial load scenario)
             if (string.IsNullOrEmpty(postcode))
             {
-                return BadRequest("Postcode is required.");
+                // Return an empty list instead of a BadRequest or NotFound error
+                return Ok(Enumerable.Empty<object>());
             }
 
             // Clean up the postcode to ensure no spaces
@@ -34,24 +36,23 @@ namespace JustEatAPI.Controllers
                 var response = await _httpClient.GetStringAsync(url);
                 var jsonResponse = JObject.Parse(response);
 
-                // Extract the restaurants from the response (assuming the "restaurants" array is not empty)
+                // Extract restaurants and map the results
                 var restaurants = jsonResponse["restaurants"]?
-                    .Take(10) // Take only the first 10 restaurants
-                    .Where(r => r["name"] != null) // Ensure the restaurant has a name
+                    .Take(10)
+                    .Where(r => r["name"] != null)
                     .Select(r => new
                     {
                         Name = r["name"]?.ToString(),
                         Cuisines = string.Join(", ", r["cuisines"]?.Select(c => c["name"]?.ToString()) ?? Enumerable.Empty<string>()),
-                        Rating = (double?)r["rating"]?["starRating"] ?? 0, // Default to 0 if rating is not available
-                        
-                        // Construct the full address including the postcode
+                        Rating = (double?)r["rating"]?["starRating"] ?? 0,
                         Address = ConstructFullAddress(r)
                     })
                     .ToList();
 
-                 if (restaurants == null || !restaurants.Any())
+                if (restaurants == null || !restaurants.Any())
                 {
-                    return NotFound("No restaurants found for the given postcode.");
+                    // Return an empty list instead of an error
+                    return Ok(Enumerable.Empty<object>());
                 }
 
                 return Ok(restaurants);
@@ -61,6 +62,7 @@ namespace JustEatAPI.Controllers
                 return StatusCode(500, "Error fetching restaurant data.");
             }
         }
+
 
         private string ConstructFullAddress(JToken restaurant)
         {
