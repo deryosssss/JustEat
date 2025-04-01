@@ -21,11 +21,11 @@ git clone https://github.com/deryosssss/JustEat.git <br />
 cd JustEat  
 
 #### backend
-2) Navigate to the backend folder and restore dependencies:
-cd backend 
-dotnet restore 
+2) Navigate to the backend folder and restore dependencies: <br />
+cd backend <br />
+dotnet restore <br />
 
-3) Build and run the application:
+3) Build and run the application: <br />
 dotnet run
 
 The API will be available at https://localhost:5020/api/restaurant/get-restaurants?postcode={postcode} <br /> 
@@ -33,13 +33,13 @@ The API will be available at https://localhost:5020/api/restaurant/get-restauran
 http://localhost:5020/api/restaurant/get-restaurants?postcode=EC1A1BB
 
 #### frontend 
-4) Navigate to the frontend folder using a secondary terminal if needed (do remember to change directory to the just eat project)
+4) Navigate to the frontend folder using a secondary terminal if needed (do remember to change directory to the just eat project) <br />
 cd frontend
 
-5) Install dependencies:
+5) Install dependencies: <br />
 npm install
 
-6) Start the frontend:
+6) Start the frontend: <br />
 npm start 
 
 7) Open http://localhost:3000 in your browser to use the application.
