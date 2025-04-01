@@ -27,6 +27,8 @@ cd JustEat
 2) Navigate to the backend folder and restore dependencies: <br />
 ```
 cd backend 
+```
+```
 dotnet restore 
 ```
 3) Build and run the application: <br />
