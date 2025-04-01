@@ -1,0 +1,94 @@
+.results {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+  }
+  
+  /* Center and style the heading */
+  h2 {
+    color: #000; /* Black color for the text */
+    font-size: 28px; /* Bigger and bolder */
+    font-weight: bold;
+    margin-bottom: 20px; /* Space before the cards */
+    text-align: center; /* Ensure it's centered */
+  }
+  
+  /* Unordered List to Center Items */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center list items horizontally */
+    width: 100%;
+  }
+  
+  /* Consolidated Card Styling */
+  .restaurant-card {
+    background-color: #fff;
+    margin: 12px 0;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    transition: all 0.3s ease-in-out;
+    border-left: 8px solid #FF8000; /* Added border left from index.css */
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Paragraph Styling */
+  .restaurant-card p {
+    margin: 8px 0;
+    color: #555;
+    font-size: 14px; /* Font size added to match index.css */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .restaurant-card {
+      width: 95%;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  }
+  
+  /* No Results Message */
+  .no-results {
+    color: #777;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  /* Fade-in animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
