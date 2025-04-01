@@ -1,6 +1,6 @@
 # Just Eat Coding Assignment
 
-Here is my attempt at the JustEat coding assessment: 
+Here is my attempt at the JustEat coding assessment: <br />
 This project fetches restaurant data from the JustEat API based on a postcode and displays relevant details, including:
 
 1) Restaurant Name
@@ -17,7 +17,7 @@ To run this project, you need the following installed on your machine:
 
 ## How to build, compile and run
 1) clone repository:
-git clone https://github.com/deryosssss/JustEat.git
+git clone https://github.com/deryosssss/JustEat.git <br />
 cd JustEat  
 
 #### backend
@@ -28,8 +28,8 @@ dotnet restore
 3) Build and run the application:
 dotnet run
 
-The API will be available at https://localhost:5020/api/restaurant/get-restaurants?postcode={postcode}
-{postcode} = any valid uk postcode such as:
+The API will be available at https://localhost:5020/api/restaurant/get-restaurants?postcode={postcode} <br /> 
+{postcode} = any valid uk postcode such as:<br />
 http://localhost:5020/api/restaurant/get-restaurants?postcode=EC1A1BB
 
 #### frontend 
