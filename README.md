@@ -20,7 +20,7 @@ To run this project, you need the following installed on your machine:
 git clone https://github.com/deryosssss/JustEat.git
 cd JustEat  
 
-### backend
+#### backend
 2) Navigate to the backend folder and restore dependencies:
 cd backend 
 dotnet restore 
@@ -32,7 +32,7 @@ The API will be available at https://localhost:5020/api/restaurant/get-restauran
 {postcode} = any valid uk postcode such as:
 http://localhost:5020/api/restaurant/get-restaurants?postcode=EC1A1BB
 
-### frontend 
+#### frontend 
 4) Navigate to the frontend folder using a secondary terminal if needed (do remember to change directory to the just eat project)
 cd frontend
 
