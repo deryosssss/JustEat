@@ -17,15 +17,17 @@ To run this project, you need the following installed on your machine:
 
 ## How to build, compile and run
 1) clone repository:
-git clone https://github.com/deryosssss/JustEat.git <br />
+```
+git clone https://github.com/deryosssss/JustEat.git 
+```
 ```
 cd JustEat  
 ```
 #### backend
 2) Navigate to the backend folder and restore dependencies: <br />
 ```
-cd backend <br />
-dotnet restore <br />
+cd backend 
+dotnet restore 
 ```
 3) Build and run the application: <br />
 ```
