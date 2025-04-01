@@ -1,5 +1,6 @@
-# JustEat
-Overview
+# Just Eat Coding Assignment
+
+Here is my attempt at the JustEat coding assessment: 
 This project fetches restaurant data from the JustEat API based on a postcode and displays relevant details, including:
 
 1) Restaurant Name
@@ -7,34 +8,64 @@ This project fetches restaurant data from the JustEat API based on a postcode an
 3) Rating (as a number)
 4) Address (street, city, postcode)
 
-This project is a backend service built using ASP.NET Core. The goal is to provide a simplified interface to fetch and return essential restaurant data in a user-friendly format.
 
 ## Prerequisites
 To run this project, you need the following installed on your machine:
-.NET 6.0 SDK or later
-A text editor or IDE (e.g., Visual Studio, Visual Studio Code)
+- .NET 6.0 SDK or later
+- A text editor or IDE (e.g., Visual Studio, Visual Studio Code)
+- Node.js and npm (for the frontend)
 
-## How to Use
-Use the endpoint GET /api/restaurant/get-restaurants?postcode={postcode} to get a list of restaurants for a given postcode.
-Replace {postcode} with the actual postcode you want to search for.
+## How to build, compile and run
+1) clone repository:
+git clone https://github.com/deryosssss/JustEat.git
+cd JustEat  
 
-The API will return a JSON response containing the name, cuisines, rating, and address for each restaurant.
+### backend
+2) Navigate to the backend folder and restore dependencies:
+cd backend 
+dotnet restore 
 
-Example Request
-GET http://localhost:5020/api/restaurant/get-restaurants?postcode=EN35XU
+3) Build and run the application:
+dotnet run
+
+The API will be available at https://localhost:5020/api/restaurant/get-restaurants?postcode={postcode}
+{postcode} = any valid uk postcode such as:
+http://localhost:5020/api/restaurant/get-restaurants?postcode=EC1A1BB
+
+### frontend 
+4) Navigate to the frontend folder using a secondary terminal if needed (do remember to change directory to the just eat project)
+cd frontend
+
+5) Install dependencies:
+npm install
+
+6) Start the frontend:
+npm start 
+
+7) Open http://localhost:3000 in your browser to use the application.
+
+## Meeting the requirement
+1) The API fetches restaurant data by sending a postcode to JustEat API.
+2) From the received data, only the following fields are displayed: Name, Cuisines, Rating, and Address.
+3) The list is limited to the first 10 restaurants returned.
+4) The data is displayed in a clean, user-friendly UI using React.
+5) The completed solution is hosted on GitHub with a visible commit history.
 
 ## Assumptions
-The JustEat API returns data in a specific structure. This solution assumes that the response will always contain valid restaurant data with the name, cuisines, rating, and address fields.
+- API Response Consistency: Assumes that the API response format will remain unchanged.
+- This is a basic integration of the JustEat API. Error handling is minimal and doesn't include retry logic or complex failure handling in case of connection issues.
+- No User Authentication: No authentication is required, as this is a simple demo application.
 
-The country information is omitted in the address as it is not included in the response from the JustEat API.
+## Improvements and Future Work
+ - Implement a favorites feature for users to save restaurants.
+ - Dark mode toggle for better UI experience.
+ - Introduce DTOs to standardize and format responses before sending them to the frontend. This will make the system more maintainable and less dependent on changes in external APIs.
+ - Implement a RestaurantService class to handle API calls and business logic separately. The controller will only manage HTTP requests, leading to cleaner, more modular code.
 
-If no restaurants are found for a given postcode, an empty array will be returned.
+## Additional features
 
-This is a basic integration of the JustEat API. Error handling is minimal and doesn't include retry logic or complex failure handling in case of connection issues.
-
-Improvements and Future Work
-Error Handling: Implement retry logic or better error handling in case of network issues or API downtime.
-
-Pagination: The JustEat API may return many results. Adding pagination would be a useful improvement to limit the number of restaurants returned at once.
-
-Caching: Implement caching for frequently queried postcodes to reduce the load on the JustEat API.
+- Mobile-Friendly Design
+- Smooth animations & transitions
+- Theme colors matching Just Eat (orange & white) - HEX codes derived from teh website 
+- Postcode Validation & Error Handling
+- Modular Code Structure
