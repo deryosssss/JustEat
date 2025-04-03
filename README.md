@@ -66,6 +66,8 @@ npm start
 - This is a basic integration of the JustEat API. Error handling is minimal and doesn't include retry logic or complex failure handling in case of connection issues.
 - No User Authentication: No authentication is required, as this is a simple demo application.
 - Basic UI Implementation: The frontend focuses on displaying data rather than advanced features like user authentication or filters.
+- Assumed that address includes firstLine, city and then postalCode
+- The assumed rating value is a double, as per the format shown in the API response. This allows for decimal values to represent the rating.
 
 ## Improvements and Future Work
  - Improve Error Handling: Implement better exception handling with retry logic.
