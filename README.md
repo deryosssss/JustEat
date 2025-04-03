@@ -76,6 +76,6 @@ npm start
 
 - Mobile-Friendly Design
 - Smooth animations & transitions
-- Theme colors matching Just Eat (orange & white) - HEX codes derived from teh website 
+- Theme colors and logo matching Just Eat (orange & white) - HEX codes and logo derived from the website 
 - Postcode Validation & Error Handling
 - Modular Code Structure
