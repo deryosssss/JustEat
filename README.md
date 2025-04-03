@@ -65,17 +65,21 @@ npm start
 - API Response Consistency: Assumes that the API response format will remain unchanged.
 - This is a basic integration of the JustEat API. Error handling is minimal and doesn't include retry logic or complex failure handling in case of connection issues.
 - No User Authentication: No authentication is required, as this is a simple demo application.
+- Basic UI Implementation: The frontend focuses on displaying data rather than advanced features like user authentication or filters.
 
 ## Improvements and Future Work
+ - Improve Error Handling: Implement better exception handling with retry logic.
+ - Add Caching: Reduce API calls by caching restaurant data for a short period.
  - Implement a favorites feature for users to save restaurants.
  - Dark mode toggle for better UI experience.
- - Introduce DTOs to standardize and format responses before sending them to the frontend. This will make the system more maintainable and less dependent on changes in external APIs.
- - Implement a RestaurantService class to handle API calls and business logic separately. The controller will only manage HTTP requests, leading to cleaner, more modular code.
+ - Unit Tests: Add tests for RestaurantService to ensure reliability.
+
+
 
 ## Additional features
 
-- Mobile-Friendly Design
-- Smooth animations & transitions
+- Mobile-Friendly Design – Fully responsive UI for different screen sizes.
+- Smooth Animations & Transitions – Enhances user experience.
 - Theme colors and logo matching Just Eat (orange & white) - HEX codes and logo derived from the website 
-- Postcode Validation & Error Handling
-- Modular Code Structure
+- Postcode Validation & Error Handling – Prevents invalid searches
+- Modular Code Structure – Ensures easy maintenance and scalability.

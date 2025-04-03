@@ -8,4 +8,4 @@ namespace JustEatAPI.DTOs
         public required string Address { get; set; }
     }
 }
-
+// Introduced DTOs to standardize and format responses before sending them to the frontend. This will make the system more maintainable and less dependent on changes in external APIs.

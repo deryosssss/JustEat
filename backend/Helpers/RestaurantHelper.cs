@@ -15,3 +15,5 @@ namespace JustEatAPI.Helpers
         }
     }
 }
+
+// Instead of formatting addresses inside the RestaurantService, we move this logic to a helper, making the service cleaner and more maintainable.

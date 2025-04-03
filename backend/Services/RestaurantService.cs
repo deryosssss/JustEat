@@ -58,3 +58,4 @@ namespace JustEatAPI.Services
     }
 }
 
+//  Implement a RestaurantService class to handle API calls and business logic separately. The controller will only manage HTTP requests, leading to cleaner, more modular code.

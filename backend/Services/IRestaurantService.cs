@@ -7,3 +7,4 @@ namespace JustEatAPI.Services
         Task<IEnumerable<RestaurantDto>> GetRestaurantsByPostcodeAsync(string postcode);
     }
 }
+
