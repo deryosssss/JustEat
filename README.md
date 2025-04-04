@@ -77,9 +77,7 @@ npm start
  - Unit Tests: Add tests for RestaurantService to ensure reliability.
 
 
-
 ## Additional features
-
 - Mobile-Friendly Design – Fully responsive UI for different screen sizes.
 - Smooth Animations & Transitions – Enhances user experience.
 - Theme colors and logo matching Just Eat (orange & white) - HEX codes and logo derived from the website 
