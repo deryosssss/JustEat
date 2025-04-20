@@ -1,5 +1,7 @@
 using JustEatAPI.Services;
 using Microsoft.OpenApi.Models;
+using AutoMapper;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,8 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
 var app = builder.Build();
 
@@ -34,7 +38,6 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseHttpsRedirection();
-app.UseCors("AllowReactApp"); // Ensure this is called after UseHttpsRedirection()
+app.UseCors("AllowReactApp");
 app.MapControllers();
 app.Run();

@@ -1,6 +1,8 @@
 using JustEatAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
 
 namespace JustEatAPI.Controllers
 {
@@ -23,6 +25,11 @@ namespace JustEatAPI.Controllers
                 return BadRequest("Postcode is required.");
             }
 
+            if (!IsValidUkPostcode(postcode))
+            {
+                return BadRequest("Invalid UK postcode format.");
+            }
+
             var restaurants = await _restaurantService.GetRestaurantsByPostcodeAsync(postcode);
 
             if (!restaurants.Any())
@@ -31,6 +38,11 @@ namespace JustEatAPI.Controllers
             }
 
             return Ok(restaurants);
+
         }
+         private bool IsValidUkPostcode(string postcode){
+            var pattern = @"^([A-Z]{1,2}[0-9][0-9A-Z]?\s?[0-9][A-Z]{2})$";
+            return Regex.IsMatch(postcode, pattern, RegexOptions.IgnoreCase);
+         }
     }
 }

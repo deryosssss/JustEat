@@ -1,4 +1,4 @@
-using JustEatAPI.DTOs;  
+using JustEatAPI.DTOs;
 using JustEatAPI.Helpers;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 
 namespace JustEatAPI.Services
 {
@@ -13,12 +14,15 @@ namespace JustEatAPI.Services
     {
         private readonly HttpClient _httpClient;
         private readonly ILogger<RestaurantService> _logger;
+        private readonly IMapper _mapper;
 
-        public RestaurantService(HttpClient httpClient, ILogger<RestaurantService> logger)
+        public RestaurantService(HttpClient httpClient, ILogger<RestaurantService> logger, IMapper mapper)
         {
             _httpClient = httpClient;
             _logger = logger;
+            _mapper = mapper;
         }
+
 
         public async Task<IEnumerable<RestaurantDto>> GetRestaurantsByPostcodeAsync(string postcode)
         {
@@ -30,19 +34,18 @@ namespace JustEatAPI.Services
                 var response = await _httpClient.GetStringAsync(url);
                 var jsonResponse = JObject.Parse(response);
 
-                var restaurants = jsonResponse["restaurants"]?
-                    .Take(10)
-                    .Where(r => r["name"] != null)
-                    .Select(r => new RestaurantDto
-                    {
-                        Name = r["name"]?.ToString(),
-                        Cuisines = string.Join(", ", r["cuisines"]?.Select(c => c["name"]?.ToString()) ?? Enumerable.Empty<string>()),
-                        Rating = (double?)r["rating"]?["starRating"] ?? 0,
-                        Address = RestaurantHelper.ConstructFullAddress(r)
-                    })
-                    .ToList();
+                var restaurantsJson = jsonResponse["restaurants"]?.Take(10);
 
-                return restaurants ?? Enumerable.Empty<RestaurantDto>();
+                if (restaurantsJson == null)
+                    return Enumerable.Empty<RestaurantDto>();
+
+                var rawRestaurants = JArray.FromObject(restaurantsJson).ToObject<List<RestaurantRawModel>>();
+
+
+                var mappedRestaurants = _mapper.Map<List<RestaurantDto>>(rawRestaurants);
+
+                return mappedRestaurants;
+
             }
             catch (HttpRequestException ex)
             {

@@ -11,9 +11,23 @@ This project fetches restaurant data from the JustEat API based on a postcode an
 
 ## Prerequisites
 To run this project, you need the following installed on your machine:
-- .NET 6.0 SDK or later
+- .NET 8.0 SDK (project targets net8.0)
+- Node.js & npm (for the frontend)
 - A text editor or IDE (e.g., Visual Studio, Visual Studio Code)
-- Node.js and npm (for the frontend)
+
+Check your .NET version with:
+```
+dotnet --version
+```
+
+## Project Structure 
+/backend
+  ├── JustEatAPI/            # ASP.NET Core Web API project
+  ├── JustEatAPI.Tests/      # xUnit test project for backend services
+
+/frontend
+  ├── src/                   # React app source code
+  ├── public/                # Static files
 
 ## How to build, compile and run
 1) clone repository:
@@ -26,23 +40,33 @@ cd JustEat
 #### backend
 2) Navigate to the backend folder and restore dependencies: <br />
 ```
-cd backend 
+cd JustEat/backend
 ```
 ```
-dotnet restore 
+dotnet restore JustEatAPI.csproj
 ```
 3) Build and run the application: <br />
 ```
 dotnet run
 ```
-The API will be available at https://localhost:5020/api/restaurant/get-restaurants?postcode={postcode} <br /> 
+The API will be available at https://localhost:7092/api/restaurant/get-restaurants?postcode={postcode} <br /> 
 {postcode} = any valid uk postcode such as:<br />
-http://localhost:5020/api/restaurant/get-restaurants?postcode=EC1A1BB
+https://localhost:7092/api/restaurant/get-restaurants?postcode=EN3%205XU
 
+###### How to Run Backend Tests
+```
+cd JustEat/backend
+dotnet test ./JustEatAPI.Tests/JustEatAPI.Tests.csproj
+```
+If tests fail to restore, try:
+```
+rm -rf bin obj
+dotnet restore
+```
 #### frontend 
 4) Navigate to the frontend folder using a secondary terminal if needed (do remember to change directory to the just eat project) <br />
 ```
-cd frontend
+cd ../frontend
 ```
 5) Install dependencies: <br />
 ```
@@ -53,6 +77,32 @@ npm install
 npm start 
 ```
 7) Open http://localhost:3000 in your browser to use the application.
+
+##  Common Troubleshooting Tips
+### .NET Errors
+If you see restore/build errors:
+```
+rm -rf bin obj
+dotnet restore
+```
+### HTTPS Issues
+To trust the development certificate on macOS:
+```
+dotnet dev-certs https --trust
+```
+### CORS Errors (Frontend → Backend)
+Update your backend Program.cs with:
+```
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy.WithOrigins("http://localhost:3000")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+});
+
+app.UseCors("AllowFrontend");
+```
 
 ## Meeting the requirement
 1) The API fetches restaurant data by sending a postcode to JustEat API.

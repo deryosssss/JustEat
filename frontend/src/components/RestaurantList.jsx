@@ -1,4 +1,3 @@
-// src/components/RestaurantList.js
 import React from "react";
 import "./RestaurantList.css";
 
@@ -14,15 +13,9 @@ function RestaurantList({ restaurants }) {
         {restaurants.map((r, index) => (
           <li key={index} className="restaurant-card">
             <strong>{r.name || "Unknown Restaurant"}</strong>
-            <p>
-              <strong>Cuisines:</strong> {r.cuisines || "N/A"}
-            </p>
-            <p>
-              <strong>Rating:</strong> ⭐ {r.rating ? r.rating.toFixed(1) : "N/A"}
-            </p>
-            <p>
-              <strong>Address:</strong> {r.address || "Address not available"}
-            </p>
+            <p><strong>Cuisines:</strong> {r.cuisines && r.cuisines.length > 0 ? r.cuisines.join(", ") : "N/A"}</p>
+            <p> <strong>Rating:</strong> ⭐ {r.rating !== null && r.rating !== undefined ? r.rating.toFixed(1) : "N/A"}</p>
+            <p><strong>Address:</strong> {r.address || "Address not available"}</p>
           </li>
         ))}
       </ul>

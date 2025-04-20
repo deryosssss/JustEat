@@ -1,30 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/deryabaglan/Desktop/masters/JustEatProject/backend/JustEatAPI.csproj": {}
+    "/Users/deryabaglan/Desktop/masters/JustEatImproved/backend/JustEatAPI.csproj": {}
   },
   "projects": {
-    "/Users/deryabaglan/Desktop/masters/JustEatProject/backend/JustEatAPI.csproj": {
+    "/Users/deryabaglan/Desktop/masters/JustEatImproved/backend/JustEatAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/deryabaglan/Desktop/masters/JustEatProject/backend/JustEatAPI.csproj",
+        "projectUniqueName": "/Users/deryabaglan/Desktop/masters/JustEatImproved/backend/JustEatAPI.csproj",
         "projectName": "JustEatAPI",
-        "projectPath": "/Users/deryabaglan/Desktop/masters/JustEatProject/backend/JustEatAPI.csproj",
+        "projectPath": "/Users/deryabaglan/Desktop/masters/JustEatImproved/backend/JustEatAPI.csproj",
         "packagesPath": "/Users/deryabaglan/.nuget/packages/",
-        "outputPath": "/Users/deryabaglan/Desktop/masters/JustEatProject/backend/obj/",
+        "outputPath": "/Users/deryabaglan/Desktop/masters/JustEatImproved/backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/deryabaglan/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "net9.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -41,12 +41,16 @@
         "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[6.0.15, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -68,6 +72,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.12, 8.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.12, 8.0.12]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.12, 8.0.12]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
