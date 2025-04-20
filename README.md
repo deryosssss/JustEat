@@ -21,13 +21,8 @@ dotnet --version
 ```
 
 ## Project Structure 
-/backend
-  ├── JustEatAPI/            # ASP.NET Core Web API project
-  ├── JustEatAPI.Tests/      # xUnit test project for backend services
 
-/frontend
-  ├── src/                   # React app source code
-  ├── public/                # Static files
+<img src="./assets/screenshotstructure.png" alt="UI Screenshot" width="400"/>
 
 ## How to build, compile and run
 1) clone repository:
@@ -135,3 +130,4 @@ app.UseCors("AllowFrontend");
 - Modular Code Structure – Ensures easy maintenance and scalability.
 
 <img src="./assets/screenshot.png" alt="UI Screenshot" width="400"/>
+
