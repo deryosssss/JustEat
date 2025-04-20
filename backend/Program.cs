@@ -37,6 +37,7 @@ if (app.Environment.IsDevelopment())
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "JustEatAPI v1");
     });
 }
+//  https://localhost:7092/swagger
 
 app.UseCors("AllowReactApp");
 app.MapControllers();

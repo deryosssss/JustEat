@@ -5,8 +5,7 @@ export const fetchRestaurantsByPostcode = async (postcode) => {
 
   try {
     const response = await fetch(url);
-    const raw = await response.text(); // ⬅️ get raw response as string
-
+    const raw = await response.text(); 
     if (!response.ok) {
       throw new Error("Bad response from API");
     }
@@ -16,7 +15,7 @@ export const fetchRestaurantsByPostcode = async (postcode) => {
     return data;
     
   } catch (error) {
-    console.error("❌ Fetch error:", error); // 👈 log the actual error
+    console.error("❌ Fetch error:", error); 
     throw error;
   }
 };

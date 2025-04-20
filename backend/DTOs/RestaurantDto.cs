@@ -8,4 +8,14 @@ namespace JustEatAPI.DTOs
         public required string Address { get; set; }
     }
 }
-// Introduced DTOs to standardize and format responses before sending them to the frontend. This will make the system more maintainable and less dependent on changes in external APIs.
+// The Dto suffix stands for Data Transfer Object – it’s a lightweight class used to send data between layers (like from your API to your frontend).
+
+/*
+EXAMPLE OUTPUT-
+{
+  "name": "Pizza Palace",
+  "cuisines": ["Pizza", "Italian"],
+  "rating": 4.2,
+  "address": "123 High St, London, EC1A 1BB"
+}
+*/

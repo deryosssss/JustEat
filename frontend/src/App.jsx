@@ -67,8 +67,8 @@ function App() {
       <div className="search-section">
         <input
           type="text"
-          id="postcode" // ✅ added
-          name="postcode" // ✅ optional but helpful
+          id="postcode" 
+          name="postcode"
           placeholder="Enter Postcode (e.g., EC4M 7RF)"
           value={postcode}
           onChange={(e) => setPostcode(e.target.value)}

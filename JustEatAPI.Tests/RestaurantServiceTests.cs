@@ -32,7 +32,7 @@ public class RestaurantServiceTests
 
         var mapperMock = new Mock<IMapper>();
         mapperMock.Setup(m => m.Map<List<RestaurantDto>>(It.IsAny<object>()))
-                  .Returns(new List<RestaurantDto> { new RestaurantDto { Name = "Test", Cuisines = new List<string> { "Pizza" }, Rating = 4.5, Address = "1 Road, Town, PC1" } });
+                  .Returns(new List<RestaurantDto> { new RestaurantDto { Name = "Test", Cuisines = new List<string> { "Pizza" }, Rating = 4.5, Address = "1 Road, Town, PC1 1XU" } });
 
         var service = new RestaurantService(httpClient, loggerMock.Object, mapperMock.Object);
 
