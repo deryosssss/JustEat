@@ -129,5 +129,5 @@ app.UseCors("AllowFrontend");
 - Postcode Validation & Error Handling – Prevents invalid searches
 - Modular Code Structure – Ensures easy maintenance and scalability.
 
-<img src="./assets/screenshot.png" alt="UI Screenshot" width="400"/>
+<img src="./assets/screenshotui.png" alt="UI Screenshot" width="400"/>
 
