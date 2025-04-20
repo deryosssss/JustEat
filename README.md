@@ -133,3 +133,5 @@ app.UseCors("AllowFrontend");
 - Theme colors and logo matching Just Eat (orange & white) - HEX codes and logo derived from the website 
 - Postcode Validation & Error Handling – Prevents invalid searches
 - Modular Code Structure – Ensures easy maintenance and scalability.
+
+<img src="./assets/screenshot.png" alt="UI Screenshot" width="400"/>
