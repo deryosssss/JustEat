@@ -22,7 +22,7 @@ dotnet --version
 
 ## Project Structure 
 
-<img src="./assets/screenshotstructure.png" alt="UI Screenshot" width="400"/>
+<img src="./assets/screenshotstructure.png" alt="folder structure" width="400"/>
 
 ## How to build, compile and run
 1) clone repository:
@@ -129,5 +129,5 @@ app.UseCors("AllowFrontend");
 - Postcode Validation & Error Handling – Prevents invalid searches
 - Modular Code Structure – Ensures easy maintenance and scalability.
 
-<img src="./assets/screenshotui.png" alt="UI Screenshot" width="400"/>
+<img src="./assets/screenshotui.png"/>
 
